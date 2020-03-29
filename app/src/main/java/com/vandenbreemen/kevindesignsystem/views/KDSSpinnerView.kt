@@ -3,6 +3,7 @@ package com.vandenbreemen.kevindesignsystem.views
 import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Paint
+import android.graphics.Rect
 import android.util.AttributeSet
 import android.view.View
 
@@ -12,7 +13,11 @@ import android.view.View
  */
 class KDSSpinnerView(context: Context?, attrs: AttributeSet?) : View(context, attrs) {
 
+    val model = SpinnerSegmentsModel()
+
+    @Deprecated(message = "Do not use")
     var startAngle = -180f
+    @Deprecated(message = "Do not use")
     var sweepAngle = 180f
 
     var currentStart = startAngle
@@ -34,7 +39,13 @@ class KDSSpinnerView(context: Context?, attrs: AttributeSet?) : View(context, at
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
-        canvas.drawArc(0.0f, 0.0f, 200.0f, 200.0f, currentStart, sweepAngle, false, arcPaint)
+        //canvas.drawArc(0.0f, 0.0f, 200.0f, 200.0f, currentStart, sweepAngle, false, arcPaint)
+
+        val masterRectangle = Rect(
+            0, 0, (width), height
+        )
+
+        model.draw(masterRectangle, canvas)
 
     }
 
