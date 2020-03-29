@@ -14,7 +14,7 @@ class SpinnerSegmentStyles {
         val white = Paint().apply {
             color = Color.valueOf(1f, 1f, 1f).toArgb()
             style = Paint.Style.STROKE
-            strokeWidth = 2f
+            strokeWidth = 10f
         }
 
     }

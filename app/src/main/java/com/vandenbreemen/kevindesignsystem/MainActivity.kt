@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
 
         val spinnerModel = kevinSpinner.model
         val segment1 = SpinnerSegment(
-            1.0f, 0f, 180f, SpinnerSegmentStyles.white
+            0.9f, 0f, 180f, SpinnerSegmentStyles.white
         )
         val segment2 = SpinnerSegment(
             0.75f,0f, 180f, SpinnerSegmentStyles.white
@@ -48,18 +48,26 @@ class MainActivity : AppCompatActivity() {
         animator.addUpdateListener {
             val value = it.animatedValue as Float
             segment1.setOffset(value)
-            kevinSpinner.invalidate()
+
         }
 
-        otherAnimator.addUpdateListener {
+        animator.addUpdateListener {
             val value = it.animatedValue as Float
-            segment2.setOffset(-value)
+
+            val toUse = value * 1.5
+
+            segment2.setOffset(toUse.toFloat())
+
+        }
+
+        animator.addUpdateListener {
             kevinSpinner.invalidate()
         }
 
         animator.interpolator = LinearInterpolator()
         animator.duration = 10000
         animator.start()
+
 
     }
 }
