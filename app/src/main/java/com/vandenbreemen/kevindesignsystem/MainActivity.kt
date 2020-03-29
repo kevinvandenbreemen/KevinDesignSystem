@@ -6,10 +6,9 @@ import android.view.animation.AccelerateDecelerateInterpolator
 import android.view.animation.LinearInterpolator
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.widget.TextViewCompat
+import androidx.core.animation.doOnEnd
 import com.vandenbreemen.kevindesignsystem.views.SpinnerSegment
 import com.vandenbreemen.kevindesignsystem.views.SpinnerSegmentStyles
-import com.vandenbreemen.kevindesignsystem.views.SpinnerSegmentsModel
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -34,6 +33,7 @@ class MainActivity : AppCompatActivity() {
         val secondAnimator = ValueAnimator.ofFloat(0f, 360f)
 
         val spinnerModel = kevinSpinner.model
+
         val segment1 = SpinnerSegment(
             0.9f, 0f, 180f, SpinnerSegmentStyles.white
         )
@@ -85,5 +85,46 @@ class MainActivity : AppCompatActivity() {
         secondAnimator.duration = 1000
         secondAnimator.repeatCount = ValueAnimator.INFINITE
         secondAnimator.start()
+
+        buildSuperSpinner()
+    }
+
+    private fun buildSuperSpinner() {
+        val segment = SpinnerSegment(0.99f, 25f, 200f, SpinnerSegmentStyles.white)
+
+        superSpinner.model.addSegment(segment)
+
+        addSuperSpinnerAnimator(segment, 0f)
+
+    }
+
+    private fun addSuperSpinnerAnimator(segment: SpinnerSegment, currentOffset: Float) {
+        val animator = ValueAnimator.ofFloat(25f)
+
+        var finalOffset: Float = currentOffset
+
+        animator.doOnEnd {
+            addSuperSpinnerAnimator(segment, finalOffset)
+        }
+
+        animator.apply {
+            interpolator = AccelerateDecelerateInterpolator()
+            duration = 500
+
+            addUpdateListener {
+                val value = it.animatedValue as Float
+                val offset = currentOffset + value
+                finalOffset = offset
+                segment.setOffset(offset)
+
+                superSpinner.invalidate()
+            }
+
+
+        }
+
+        animator.start()
+
+
     }
 }
