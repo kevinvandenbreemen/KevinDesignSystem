@@ -2,6 +2,7 @@ package com.vandenbreemen.kevindesignsystem
 
 import android.animation.ValueAnimator
 import android.os.Bundle
+import android.view.animation.AccelerateDecelerateInterpolator
 import android.view.animation.LinearInterpolator
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -30,15 +31,20 @@ class MainActivity : AppCompatActivity() {
         super.onResume()
 
         val animator = ValueAnimator.ofFloat(0f, 3600f)
-        val otherAnimator = ValueAnimator.ofFloat(0f, 3600f)
+        val secondAnimator = ValueAnimator.ofFloat(0f, 360f)
 
         val spinnerModel = kevinSpinner.model
         val segment1 = SpinnerSegment(
             0.9f, 0f, 180f, SpinnerSegmentStyles.white
         )
         val segment2 = SpinnerSegment(
-            0.75f,0f, 180f, SpinnerSegmentStyles.white
+            0.80f,0f, 180f, SpinnerSegmentStyles.white
         )
+
+        val segment3 = SpinnerSegment(
+            0.9f, 0f, 90f, SpinnerSegmentStyles.white
+        )
+        nestedSpinner.model.addSegment(segment3)
 
         spinnerModel.apply {
             addSegment(segment2)
@@ -64,10 +70,20 @@ class MainActivity : AppCompatActivity() {
             kevinSpinner.invalidate()
         }
 
+        secondAnimator.addUpdateListener {
+            val value = it.animatedValue as Float
+            segment3.setOffset(-value)
+            nestedSpinner.invalidate()
+        }
+
         animator.interpolator = LinearInterpolator()
         animator.duration = 10000
+        animator.repeatCount = ValueAnimator.INFINITE
         animator.start()
 
-
+        secondAnimator.interpolator = AccelerateDecelerateInterpolator()
+        secondAnimator.duration = 1000
+        secondAnimator.repeatCount = ValueAnimator.INFINITE
+        secondAnimator.start()
     }
 }
