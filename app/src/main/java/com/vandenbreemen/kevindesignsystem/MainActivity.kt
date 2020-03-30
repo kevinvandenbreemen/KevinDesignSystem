@@ -10,6 +10,7 @@ import androidx.core.animation.doOnEnd
 import com.vandenbreemen.kevindesignsystem.views.SpinnerSegment
 import com.vandenbreemen.kevindesignsystem.views.SpinnerSegmentStyles
 import kotlinx.android.synthetic.main.activity_main.*
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -90,7 +91,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun buildSuperSpinner() {
-        val segment = SpinnerSegment(0.99f, 25f, 200f, SpinnerSegmentStyles.white)
+        val segment = SpinnerSegment(0.90f, 25f, 200f, SpinnerSegmentStyles.white)
 
         superSpinner.model.addSegment(segment)
 
@@ -99,6 +100,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun addSuperSpinnerAnimator(segment: SpinnerSegment, currentOffset: Float) {
+
+        val random = Random(System.nanoTime())
+
         val animator = ValueAnimator.ofFloat(25f)
 
         var finalOffset: Float = currentOffset
@@ -108,11 +112,17 @@ class MainActivity : AppCompatActivity() {
         }
 
         animator.apply {
+
+            var multiplier = random.nextFloat()
+            if(random.nextBoolean()) {
+                multiplier *= -1.0f
+            }
+
             interpolator = AccelerateDecelerateInterpolator()
-            duration = 500
+            duration = (500 + random.nextInt(500)).toLong()
 
             addUpdateListener {
-                val value = it.animatedValue as Float
+                val value = (it.animatedValue as Float) * multiplier
                 val offset = currentOffset + value
                 finalOffset = offset
                 segment.setOffset(offset)
