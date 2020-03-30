@@ -15,22 +15,9 @@ class KDSSpinnerView(context: Context?, attrs: AttributeSet?) : View(context, at
 
     val model = SpinnerSegmentsModel()
 
-    @Deprecated(message = "Do not use")
-    var startAngle = -180f
-    @Deprecated(message = "Do not use")
-    var sweepAngle = 180f
-
-    var currentStart = startAngle
-
     private val arcPaint = Paint().apply {
         style = Paint.Style.STROKE
         strokeWidth = 10.0f
-    }
-
-    fun setAngleOffset(factor: Float) {
-        currentStart = (startAngle + factor)
-
-        invalidate()
     }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
@@ -39,7 +26,6 @@ class KDSSpinnerView(context: Context?, attrs: AttributeSet?) : View(context, at
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
-        //canvas.drawArc(0.0f, 0.0f, 200.0f, 200.0f, currentStart, sweepAngle, false, arcPaint)
 
         val masterRectangle = Rect(
             0, 0, (width), height
