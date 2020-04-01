@@ -50,9 +50,11 @@ class KDSSystemActivity : AppCompatActivity() {
     private fun buildSpinnerView(spinner: KDSSpinnerView) {
         buildSpinnerWheel(spinner, buildSegments = { spinner ->
 
-            val segment1 = SpinnerSegment(0.9f, 20f, 100f, SpinnerSegmentStyles.white)
-            val segment2 = SpinnerSegment(0.8f, 20f, 100f, SpinnerSegmentStyles.white)
-            val segment3 = SpinnerSegment(0.7f, 20f, 100f, SpinnerSegmentStyles.white)
+            val random = Random(System.nanoTime())
+
+            val segment1 = SpinnerSegment(0.9f, 20f, 50f + (100*random.nextFloat()), SpinnerSegmentStyles.thickRed)
+            val segment2 = SpinnerSegment(0.8f, 20f, 50f + (120*random.nextFloat()), SpinnerSegmentStyles.red)
+            val segment3 = SpinnerSegment(0.7f, 20f, 50f + (10*random.nextFloat()), SpinnerSegmentStyles.green)
 
             spinner.model.addSegment(segment1)
             spinner.model.addSegment(segment2)
