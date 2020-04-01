@@ -39,30 +39,37 @@ class KDSSystemActivity : AppCompatActivity() {
 
             var initialOffsets: MutableMap<SpinnerSegment, Float> = mutableMapOf()
             segments.forEach { seg->
-                initialOffsets[seg] = seg.currentAngle
+                initialOffsets[seg] = (seg.currentAngle - seg.startAngle)
             }
 
             animator.apply {
-
                 interpolator = AccelerateDecelerateInterpolator()
-                duration = (1000 + random.nextInt(500)).toLong()
+                duration = (1000 + random.nextInt(1000)).toLong()
+            }
 
-                addUpdateListener {
-                    segments.forEach { segment ->
+            segments.forEach {segment ->
+                var multiplier = random.nextFloat()
+                if(random.nextBoolean()) {
+                    multiplier *= -1
+                }
 
-                        var value = (it.animatedValue as Float)
+                initialOffsets[segment]?.let {currentOffset ->
 
-                        initialOffsets[segment]?.let { currentOffset ->
+                    animator.apply {
+                        addUpdateListener {
+                            var value = (it.animatedValue as Float) * multiplier
                             val offset = currentOffset + value
                             segment.setOffset(offset)
                         }
-
-
                     }
 
-                    outermostSpinner.invalidate()
                 }
 
+
+            }
+
+            animator.addUpdateListener {
+                outermostSpinner.invalidate()
             }
 
             animator

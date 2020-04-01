@@ -24,7 +24,7 @@ class SpinnerSegmentStyles {
  * @param   radiusMultiplier    Factor to multiply the drawing area radius by to compute the radius of this arc with respect
  * to the size of the rect it's drawn in.  Value between 0 and 1
  */
-class SpinnerSegment(val radiusMultiplier: Float, private val startAngle: Float, private val sweepAngle: Float,
+class SpinnerSegment(val radiusMultiplier: Float, val startAngle: Float, private val sweepAngle: Float,
                      private val paint: Paint) {
 
     var currentAngle = startAngle
