@@ -1,12 +1,15 @@
 package com.vandenbreemen.kevindesignsystem
 
 import android.animation.ValueAnimator
+import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.view.animation.AccelerateDecelerateInterpolator
 import android.view.animation.LinearInterpolator
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.animation.doOnEnd
+import com.vandenbreemen.kevindesignsystem.views.KDSSystemActivity
 import com.vandenbreemen.kevindesignsystem.views.SpinnerSegment
 import com.vandenbreemen.kevindesignsystem.views.SpinnerSegmentStyles
 import kotlinx.android.synthetic.main.activity_main.*
@@ -136,5 +139,10 @@ class MainActivity : AppCompatActivity() {
         animator.start()
 
 
+    }
+
+    fun doTryKDSystem(view: View) {
+        val intent = Intent(this,  KDSSystemActivity::class.java )
+        startActivity(intent)
     }
 }

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.vandenbreemen.kevindesignsystem.views.KDSSpinnerView
+        android:id="@+id/outermostSpinner"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.vandenbreemen.kevindesignsystem.views.KDSSpinnerView
+        android:id="@+id/spinner4Of4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="@id/outermostSpinner"
+        app:layout_constraintLeft_toLeftOf="@id/outermostSpinner"
+        app:layout_constraintRight_toRightOf="@id/outermostSpinner"
+        app:layout_constraintTop_toTopOf="@id/outermostSpinner" />
+
+    <com.vandenbreemen.kevindesignsystem.views.KDSSpinnerView
+        android:id="@+id/spinner3Of4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="@id/spinner4Of4"
+        app:layout_constraintLeft_toLeftOf="@id/spinner4Of4"
+        app:layout_constraintRight_toRightOf="@id/spinner4Of4"
+        app:layout_constraintTop_toTopOf="@id/spinner4Of4" />
+
+
+    <com.vandenbreemen.kevindesignsystem.views.KDSSpinnerView
+        android:id="@+id/spinner2Of4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="@id/spinner3Of4"
+        app:layout_constraintTop_toTopOf="@id/spinner3Of4"
+        app:layout_constraintLeft_toLeftOf="@id/spinner3Of4"
+        app:layout_constraintRight_toRightOf="@id/spinner3Of4"
+        />
+
+    <com.vandenbreemen.kevindesignsystem.views.KDSSpinnerView
+        android:id="@+id/spinner1Of4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="@id/spinner2Of4"
+        app:layout_constraintTop_toTopOf="@id/spinner2Of4"
+        app:layout_constraintLeft_toLeftOf="@id/spinner2Of4"
+        app:layout_constraintRight_toRightOf="@id/spinner2Of4"
+        />
+
+    <com.vandenbreemen.kevindesignsystem.views.KDSSpinnerView
+        android:id="@+id/innerMostSpinner"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="@id/spinner1Of4"
+        app:layout_constraintTop_toTopOf="@id/spinner1Of4"
+        app:layout_constraintLeft_toLeftOf="@id/spinner1Of4"
+        app:layout_constraintRight_toRightOf="@id/spinner1Of4"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
