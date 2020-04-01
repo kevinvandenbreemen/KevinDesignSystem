@@ -1,5 +1,6 @@
 package com.vandenbreemen.kevindesignsystem.views
 
+import android.animation.Animator
 import android.animation.ValueAnimator
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -14,6 +15,8 @@ import java.util.*
  */
 class KDSSystemActivity : AppCompatActivity() {
 
+    private val animatorsList: MutableList<Animator> = mutableListOf()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_k_d_s_system)
@@ -24,6 +27,24 @@ class KDSSystemActivity : AppCompatActivity() {
         buildSpinnerView(spinner3Of4)
         buildSpinnerView(spinner4Of4)
         buildSpinnerView(innerMostSpinner)
+    }
+
+    override fun onPause() {
+        super.onPause()
+
+        animatorsList.forEach { anim ->
+            anim.pause()
+        }
+
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        animatorsList.forEach { anim->
+            anim.resume()
+        }
+
     }
 
     private fun buildSpinnerView(spinner: KDSSpinnerView) {
@@ -101,7 +122,11 @@ class KDSSystemActivity : AppCompatActivity() {
     private fun buildAndStartAnimator(segments: List<SpinnerSegment>,
                                       buildAnimator: (segments: List<SpinnerSegment>)->ValueAnimator) {
         val animator = buildAnimator(segments)
-        animator.doOnEnd { buildAndStartAnimator(segments, buildAnimator) }
+        animator.doOnEnd {
+            animatorsList.remove(animator)
+            buildAndStartAnimator(segments, buildAnimator)
+        }
+        animatorsList.add(animator)
         animator.start()
     }
 }
