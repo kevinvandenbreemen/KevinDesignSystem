@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.view.animation.AccelerateDecelerateInterpolator
 import androidx.core.animation.doOnEnd
 import com.vandenbreemen.kevindesignsystem.R
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.layout_eye_of_logs.*
 import java.util.*
 
@@ -19,7 +18,16 @@ class KDSSystemActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_k_d_s_system)
 
-        buildSpinnerWheel(outermostSpinner, buildSegments = {spinner ->
+        buildSpinnerView(outermostSpinner)
+        buildSpinnerView(spinner1Of4)
+        buildSpinnerView(spinner2Of4)
+        buildSpinnerView(spinner3Of4)
+        buildSpinnerView(spinner4Of4)
+        buildSpinnerView(innerMostSpinner)
+    }
+
+    private fun buildSpinnerView(spinner: KDSSpinnerView) {
+        buildSpinnerWheel(spinner, buildSegments = { spinner ->
 
             val segment1 = SpinnerSegment(0.9f, 20f, 100f, SpinnerSegmentStyles.white)
             val segment2 = SpinnerSegment(0.8f, 20f, 100f, SpinnerSegmentStyles.white)
@@ -69,13 +77,12 @@ class KDSSystemActivity : AppCompatActivity() {
             }
 
             animator.addUpdateListener {
-                outermostSpinner.invalidate()
+                spinner.invalidate()
             }
 
             animator
 
         })
-
     }
 
     /**
