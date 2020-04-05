@@ -16,6 +16,23 @@ Next add the actual dependency itself.  In your module build.gradle add this und
 implementation 'com.github.kevinvandenbreemen:KevinDesignSystem:[release_num]'
 ```
 
+# Styling
+
+## Margins
+Whenever possible set your margin values to *@dimen/margin*, as this will cause your layout to use the design system's default margin value.
+
+## Sections
+Content should be broken up into discrete sections whenever possible.  The following background styles should be applied to most ViewGroups:
+
+### @drawable/kds_section_background
+This is the most common style.
+
+### @drawable/kds_attention_background
+Provides a blue border that contrasts with the gray border of the default section background above.
+
+### @drawable/kds_alert_background
+Use this for providing critical / show-stopping information to your user.
+
 # Components
 
 ## Buttons
