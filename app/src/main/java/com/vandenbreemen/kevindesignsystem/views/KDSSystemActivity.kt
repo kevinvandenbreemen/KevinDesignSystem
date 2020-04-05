@@ -13,7 +13,7 @@ import java.util.*
 /**
  * Inherit from this activity to create a UI for system type screens.  Includes a spinner in the background
  */
-class KDSSystemActivity : AppCompatActivity() {
+open class KDSSystemActivity : AppCompatActivity() {
 
     private val animatorsList: MutableList<Animator> = mutableListOf()
 
@@ -21,12 +21,13 @@ class KDSSystemActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_k_d_s_system)
 
+        prepareSpinners()
+    }
+
+    protected fun prepareSpinners() {
         buildSpinnerView(outermostSpinner)
-        //buildSpinnerView(spinner1Of4)
         buildSpinnerView(spinner2Of4)
-        //buildSpinnerView(spinner3Of4)
         buildSpinnerView(spinner4Of4)
-        //buildSpinnerView(innerMostSpinner)
     }
 
     override fun onPause() {
