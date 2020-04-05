@@ -2,9 +2,9 @@ package com.vandenbreemen.kevindesignsystem.views
 
 import android.animation.Animator
 import android.animation.ValueAnimator
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.animation.AccelerateDecelerateInterpolator
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.animation.doOnEnd
 import com.vandenbreemen.kevindesignsystem.R
 import kotlinx.android.synthetic.main.layout_eye_of_logs.*
@@ -52,10 +52,11 @@ open class KDSSystemActivity : AppCompatActivity() {
         buildSpinnerWheel(spinner, buildSegments = { spinner ->
 
             val random = Random(System.nanoTime())
+            val styles = SpinnerSegmentStyles(this)
 
-            val segment1 = SpinnerSegment(0.9f, 20f, 50f + (100*random.nextFloat()), SpinnerSegmentStyles.thickRed)
-            val segment2 = SpinnerSegment(0.8f, 20f, 50f + (120*random.nextFloat()), SpinnerSegmentStyles.white)
-            val segment3 = SpinnerSegment(0.7f, 20f, 50f + (10*random.nextFloat()), SpinnerSegmentStyles.thinWhite)
+            val segment1 = SpinnerSegment(0.9f, 20f, 50f + (100*random.nextFloat()), styles.thickRed)
+            val segment2 = SpinnerSegment(0.8f, 20f, 50f + (120*random.nextFloat()), styles.white)
+            val segment3 = SpinnerSegment(0.7f, 20f, 50f + (10*random.nextFloat()), styles.thinWhite)
 
             spinner.model.addSegment(segment1)
             spinner.model.addSegment(segment2)

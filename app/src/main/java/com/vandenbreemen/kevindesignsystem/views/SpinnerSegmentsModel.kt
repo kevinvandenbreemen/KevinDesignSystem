@@ -1,47 +1,64 @@
 package com.vandenbreemen.kevindesignsystem.views
 
+import android.content.Context
 import android.graphics.Canvas
-import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.Rect
+import com.vandenbreemen.kevindesignsystem.R
 
 /**
  * Default segment styles for drawing the spinner segments
  */
-class SpinnerSegmentStyles {
-    companion object {
+class SpinnerSegmentStyles(private val context: Context) {
 
-        val white = Paint().apply {
-            color = Color.valueOf(1f, 1f, 1f).toArgb()
+    val white: Paint
+    val thinWhite: Paint
+    val red: Paint
+    val thickRed: Paint
+    val green: Paint
+    val blue: Paint
+
+    init {
+        white = Paint().apply {
+            color = context.resources.getColor(R.color.kds_red, context.theme)
             style = Paint.Style.STROKE
             strokeWidth = 10f
         }
 
-        val thinWhite = Paint().apply {
-            color = Color.valueOf(1f, 1f, 1f).toArgb()
+        thinWhite = Paint().apply {
+            color = context.resources.getColor(R.color.kds_light, context.theme)
             style = Paint.Style.STROKE
             strokeWidth = 7f
         }
 
-        val red = Paint().apply {
-            color = Color.valueOf(1f, 0f, 0f).toArgb()
+        red = Paint().apply {
+            color = context.resources.getColor(R.color.kds_red, context.theme)
             style = Paint.Style.STROKE
             strokeWidth = 5f
         }
 
-        val thickRed = Paint().apply {
-            color = Color.valueOf(1f, 0f, 0f).toArgb()
+        thickRed = Paint().apply {
+            color = context.resources.getColor(R.color.kds_red, context.theme)
             style = Paint.Style.STROKE
             strokeWidth = 50f
         }
 
-        val green = Paint().apply {
-            color = Color.valueOf(0f, 1f, 0f).toArgb()
+        green = Paint().apply {
+            color = context.resources.getColor(R.color.kds_green, context.theme)
+            style = Paint.Style.STROKE
+            strokeWidth = 15f
+        }
+
+        blue = Paint().apply {
+            color = context.resources.getColor(R.color.kds_blue, context.theme)
             style = Paint.Style.STROKE
             strokeWidth = 15f
         }
 
     }
+
+
+
 }
 
 /**
