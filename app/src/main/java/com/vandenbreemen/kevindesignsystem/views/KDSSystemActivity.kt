@@ -22,11 +22,11 @@ class KDSSystemActivity : AppCompatActivity() {
         setContentView(R.layout.activity_k_d_s_system)
 
         buildSpinnerView(outermostSpinner)
-        buildSpinnerView(spinner1Of4)
+        //buildSpinnerView(spinner1Of4)
         buildSpinnerView(spinner2Of4)
-        buildSpinnerView(spinner3Of4)
+        //buildSpinnerView(spinner3Of4)
         buildSpinnerView(spinner4Of4)
-        buildSpinnerView(innerMostSpinner)
+        //buildSpinnerView(innerMostSpinner)
     }
 
     override fun onPause() {
@@ -53,8 +53,8 @@ class KDSSystemActivity : AppCompatActivity() {
             val random = Random(System.nanoTime())
 
             val segment1 = SpinnerSegment(0.9f, 20f, 50f + (100*random.nextFloat()), SpinnerSegmentStyles.thickRed)
-            val segment2 = SpinnerSegment(0.8f, 20f, 50f + (120*random.nextFloat()), SpinnerSegmentStyles.red)
-            val segment3 = SpinnerSegment(0.7f, 20f, 50f + (10*random.nextFloat()), SpinnerSegmentStyles.green)
+            val segment2 = SpinnerSegment(0.8f, 20f, 50f + (120*random.nextFloat()), SpinnerSegmentStyles.white)
+            val segment3 = SpinnerSegment(0.7f, 20f, 50f + (10*random.nextFloat()), SpinnerSegmentStyles.thinWhite)
 
             spinner.model.addSegment(segment1)
             spinner.model.addSegment(segment2)
