@@ -16,9 +16,21 @@ Next add the actual dependency itself.  In your module build.gradle add this und
 implementation 'com.github.kevinvandenbreemen:KevinDesignSystem:[release_num]'
 ```
 
+# Components
 
+## Buttons
 
-# The Components
+Use the styles to create buttons in the design system.  The following button styles are available:
+
+### kds_default_button
+
+Use this for most calls to action that involve buttons.  This can represent both a destructive and a non-destructive button.
+
+Example:
+
+![](./docs/res/KDSDefaultButton.png)
+
+# Activities
 
 ## Important
 In the onCreate() method for any activity you override be sure to call setContentView() first before calling super.onCreate().  This will give the superclass a chance to set up the UI components.
