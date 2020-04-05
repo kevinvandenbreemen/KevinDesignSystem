@@ -8,4 +8,16 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!-- Text Styles -->
+    <style name="kds_mainTitle" >
+        <item name="android:textSize">12pt</item>
+        <item name="android:textColor">@color/kds_light</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="kds_text">
+        <item name="android:textSize">8pt</item>
+        <item name="android:textColor">@color/kds_light</item>
+    </style>
+
 </resources>
