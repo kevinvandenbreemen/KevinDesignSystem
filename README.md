@@ -1,3 +1,24 @@
+<!-- TOC -->
+
+- [KevinDesignSystem](#kevindesignsystem)
+- [How to Add it to your Project](#how-to-add-it-to-your-project)
+- [Styling](#styling)
+  - [Margins](#margins)
+  - [Sections](#sections)
+    - [@drawable/kds_section_background](#drawablekdssectionbackground)
+    - [@drawable/kds_attention_background](#drawablekdsattentionbackground)
+    - [@drawable/kds_alert_background](#drawablekdsalertbackground)
+- [Components](#components)
+  - [Buttons](#buttons)
+    - [kds_default_button](#kdsdefaultbutton)
+- [Activities](#activities)
+  - [Important](#important)
+  - [KDSSystemActivity](#kdssystemactivity)
+    - [How to use It](#how-to-use-it)
+    - [How to Add Content](#how-to-add-content)
+
+<!-- /TOC -->
+
 # KevinDesignSystem
 Attempt at creating a personal UI design system library in Android
 
