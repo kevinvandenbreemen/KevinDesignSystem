@@ -37,3 +37,6 @@ android:configChanges="orientation"
 ```
 
 in the activity declaration in AndroidManifest.xml
+
+### How to Add Content
+You can add your own content by adding views into the 'mainContent' view.
