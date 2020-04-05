@@ -16,7 +16,7 @@
     <color name="kds_background_clear">#6D6D6EAA</color>
     <color name="kds_light">#FFFFFF</color>
 
-    <!-- non-grayscale Colors -->
+    <!-- non-grayscale Colors defined using https://paletton.com/#uid=3050u0kfT++fT++4y+Vqf+Q+0+V -->
     <color name="kds_red">#FF1E00</color>
     <color name="kds_error">#FF462E</color>
     <color name="kds_green">#9AFF00</color>
