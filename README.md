@@ -10,6 +10,8 @@ In the onCreate() method for any activity you override be sure to call setConten
 
 ## KDSSystemActivity
 
+![](./docs/res/KDSSystemActivity.png)
+
 ### How to use It
 Add an activity to your project and have it inherit from KDSSystemActivity.
 
@@ -20,4 +22,3 @@ android:configChanges="orientation"
 ```
 
 in the activity declaration in AndroidManifest.xml
-
