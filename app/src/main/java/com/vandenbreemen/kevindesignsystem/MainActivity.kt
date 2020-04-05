@@ -33,20 +33,22 @@ class MainActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
 
+        val styles = SpinnerSegmentStyles(this)
+
         val animator = ValueAnimator.ofFloat(0f, 3600f)
         val secondAnimator = ValueAnimator.ofFloat(0f, 360f)
 
         val spinnerModel = kevinSpinner.model
 
         val segment1 = SpinnerSegment(
-            0.9f, 0f, 180f, SpinnerSegmentStyles.white
+            0.9f, 0f, 180f, styles.white
         )
         val segment2 = SpinnerSegment(
-            0.80f,0f, 180f, SpinnerSegmentStyles.white
+            0.80f,0f, 180f, styles.blue
         )
 
         val segment3 = SpinnerSegment(
-            0.9f, 0f, 90f, SpinnerSegmentStyles.white
+            0.9f, 0f, 90f, styles.green
         )
         nestedSpinner.model.addSegment(segment3)
 
@@ -94,7 +96,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun buildSuperSpinner() {
-        val segment = SpinnerSegment(0.90f, 25f, 200f, SpinnerSegmentStyles.white)
+
+        val styles = SpinnerSegmentStyles(this)
+
+        val segment = SpinnerSegment(0.90f, 25f, 200f, styles.white)
 
         superSpinner.model.addSegment(segment)
 
