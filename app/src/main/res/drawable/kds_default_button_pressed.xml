@@ -11,7 +11,7 @@
 
         />
 
-    <stroke android:color="@color/kds_dark"
+    <stroke android:color="@color/kds_green"
         android:width="2dp"
         />
 
