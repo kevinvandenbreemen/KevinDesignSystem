@@ -26,6 +26,7 @@
         <item name="android:textColor">@color/kds_text_color</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">8pt</item>
+        <item name="android:padding">@dimen/margin</item>
     </style>
 
 </resources>
