@@ -1,6 +1,21 @@
 # KevinDesignSystem
 Attempt at creating a personal UI design system library in Android
 
+# How to Add it to your Project
+I've used Jitpack for adding this to my projects.  To add this first make sure jitpack is one of your repositories in your root build.gradle:
+
+Add this to the repositories section:
+
+```
+maven { url 'https://jitpack.io' }
+```
+
+Next add the actual dependency itself.  In your module build.gradle add this under dependencies:
+
+```
+implementation 'com.github.kevinvandenbreemen:KevinDesignSystem:[release_num]'
+```
+
 
 
 # The Components
