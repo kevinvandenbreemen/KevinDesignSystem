@@ -15,6 +15,17 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <style name="kds_header">
+        <item name="android:textSize">10pt</item>
+        <item name="android:textColor">@color/kds_text_color</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="kds_instruction" >
+        <item name="android:textSize">10pt</item>
+        <item name="android:textColor">@color/kds_green</item>
+    </style>
+
     <style name="kds_text">
         <item name="android:textSize">8pt</item>
         <item name="android:textColor">@color/kds_text_color</item>
