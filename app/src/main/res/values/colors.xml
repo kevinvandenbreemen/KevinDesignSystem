@@ -8,11 +8,18 @@
 
     <color name="kds_clear">#00000000</color>
 
+    <!-- Colors defined using https://paletton.com/#uid=34v0u0k00w000++00SJ00pV0hkj -->
     <color name="kds_heading_color">#EAEAEA</color>
     <color name="kds_dark">#6D6D6E</color>
     <color name="kds_background_default">#8C8C8C</color>
     <color name="kds_background_light">#ADADAD</color>
     <color name="kds_background_clear">#6D6D6EAA</color>
     <color name="kds_light">#FFFFFF</color>
+
+    <!-- non-grayscale Colors -->
+    <color name="kds_red">#FF1E00</color>
+    <color name="kds_error">#FF462E</color>
+    <color name="kds_green">#9AFF00</color>
+    <color name="kds_blue">#4577FF</color>
 
 </resources>
