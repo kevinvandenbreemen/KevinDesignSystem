@@ -6,4 +6,6 @@
 
     <color name="kds_blackBackground">#000000</color>
 
+    <color name="kds_clear">$00000000</color>
+
 </resources>
