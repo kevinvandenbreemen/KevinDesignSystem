@@ -8,6 +8,23 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!-- Section Styles -->
+    <style name="kds_section">
+        <item name="android:background">@drawable/kds_section_background</item>
+        <item name="android:padding">@dimen/margin</item>
+        <item name="android:layout_margin">@dimen/margin</item>
+        <item name="android:shadowColor">@color/kds_dark</item>
+        <item name="android:shadowRadius">10</item>
+    </style>
+
+    <style name="kds_section_attention">
+        <item name="android:background">@drawable/kds_attention_background</item>
+        <item name="android:padding">@dimen/margin</item>
+        <item name="android:layout_margin">@dimen/margin</item>
+        <item name="android:shadowColor">@color/kds_dark</item>
+        <item name="android:shadowRadius">10</item>
+    </style>
+
     <!-- Text Styles -->
     <style name="kds_mainTitle" >
         <item name="android:textSize">12pt</item>
