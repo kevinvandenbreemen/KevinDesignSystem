@@ -12,7 +12,7 @@
     <color name="kds_heading_color">#808080</color>
     <color name="kds_text_color">#FAFAFA</color>
     <color name="kds_dark">#020202</color>
-    <color name="kds_background_default">#353535</color>
+    <color name="kds_background_default">#020202</color>
     <color name="kds_background_light">#575757</color>
     <color name="kds_background_clear">#575757AA</color>
     <color name="kds_light">#7B7B7B</color>
