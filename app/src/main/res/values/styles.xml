@@ -13,23 +13,27 @@
         <item name="android:textSize">12pt</item>
         <item name="android:textColor">@color/kds_text_color</item>
         <item name="android:textStyle">bold</item>
+        <item name="android:padding">@dimen/margin</item>
     </style>
 
     <style name="kds_header">
         <item name="android:textSize">10pt</item>
         <item name="android:textColor">@color/kds_text_color</item>
         <item name="android:textStyle">bold</item>
+        <item name="android:padding">@dimen/margin</item>
     </style>
 
     <style name="kds_instruction" >
         <item name="android:textSize">10pt</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/kds_green</item>
+        <item name="android:padding">@dimen/margin</item>
     </style>
 
     <style name="kds_text">
         <item name="android:textSize">8pt</item>
         <item name="android:textColor">@color/kds_text_color</item>
+        <item name="android:padding">@dimen/margin</item>
     </style>
 
     <!-- Text input styles -->
@@ -39,6 +43,7 @@
         <item name="android:textColorHint">@color/kds_green</item>
         <item name="android:colorActivatedHighlight">@color/kds_background_light</item>
         <item name="android:backgroundTint">@color/kds_blue</item>
+        <item name="android:padding">@dimen/margin</item>
     </style>
 
     <!-- Button Styles -->
