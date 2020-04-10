@@ -23,12 +23,22 @@
 
     <style name="kds_instruction" >
         <item name="android:textSize">10pt</item>
+        <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/kds_green</item>
     </style>
 
     <style name="kds_text">
         <item name="android:textSize">8pt</item>
         <item name="android:textColor">@color/kds_text_color</item>
+    </style>
+
+    <!-- Text input styles -->
+    <style name="kds_textInput" >
+        <item name="android:textSize">9pt</item>
+        <item name="android:textColor">@color/kds_text_color</item>
+        <item name="android:textColorHint">@color/kds_green</item>
+        <item name="android:colorActivatedHighlight">@color/kds_background_light</item>
+        <item name="android:backgroundTint">@color/kds_blue</item>
     </style>
 
     <!-- Button Styles -->
@@ -38,6 +48,7 @@
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">8pt</item>
         <item name="android:padding">@dimen/margin</item>
+
     </style>
 
     <style name="kds_cancel_button">
