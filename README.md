@@ -11,6 +11,7 @@
 - [Components](#components)
   - [Buttons](#buttons)
     - [kds_default_button](#kdsdefaultbutton)
+  - [Progress Bars](#progress-bars)
 - [Activities](#activities)
   - [Important](#important)
   - [KDSSystemActivity](#kdssystemactivity)
@@ -67,6 +68,18 @@ Use this for most calls to action that involve buttons.  This can represent both
 Example:
 
 ![](./docs/res/KDSDefaultButton.png)
+
+## Progress Bars
+
+![](./docs/res/horis_progressbar.png)
+
+To create a horizontal prograss bar apply the following styles to your ProgressBar view:
+
+```
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:progressDrawable="@drawable/kds_progress_bar"
+```
+
 
 # Activities
 

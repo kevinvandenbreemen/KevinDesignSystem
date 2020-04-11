@@ -40,20 +40,23 @@
             android:layout_margin="@dimen/margin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:minHeight="200dp"
             android:inputType="textMultiLine"
             style="@style/kds_textInput"
-            tools:text="@string/lorem_long"
+            tools:text="@string/lorem_short"
             />
 
     </LinearLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        style="@style/kds_section_attention"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@style/kds_section_attention"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/userInfoStuff"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="12dp">
 
 
         <Button
@@ -70,7 +73,7 @@
 
         <Button
             android:id="@+id/button3"
-            style="@style/kds_default_button"
+            style="@style/kds_ok_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Button"
@@ -80,6 +83,16 @@
             app:layout_constraintStart_toEndOf="@+id/button2"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ProgressBar
+
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:progressDrawable="@drawable/kds_progress_bar"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
