@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_pressed="false">
+        <shape>
+            <solid android:color="@color/kds_dark" />
+            <stroke
+                android:color="@color/kds_blue"
+                android:width="1dp"
+                />
+        </shape>
+    </item>
+
+    <!-- Define the progress properties like start color, end color etc -->
+    <item android:state_pressed="true">
+        <shape>
+            <solid android:color="@color/kds_background_clear" />
+            <stroke
+                android:color="@color/kds_blue"
+                android:width="1dp"
+                />
+        </shape>
+    </item>
+</selector>

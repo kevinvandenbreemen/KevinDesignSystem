@@ -90,4 +90,10 @@
         <item name="android:padding">@dimen/margin</item>
     </style>
 
+    <!-- Style for an item you'd click on something like a recyclerview -->
+    <style name="kds_clickable_item" >
+        <item name="background">@drawable/kds_clickable_item</item>
+        <item name="android:layout_margin">@dimen/listMargin</item>
+    </style>
+
 </resources>
