@@ -32,11 +32,13 @@ open class KDSSystemActivity : AppCompatActivity() {
 
     override fun onPause() {
         super.onPause()
+    }
 
+    override fun onStop() {
+        super.onStop()
         animatorsList.forEach { anim ->
             anim.pause()
         }
-
     }
 
     override fun onResume() {
