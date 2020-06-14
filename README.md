@@ -5,13 +5,14 @@
 - [Styling](#styling)
   - [Margins](#margins)
   - [Sections](#sections)
-    - [@drawable/kds_section_background](#drawablekdssectionbackground)
-    - [@drawable/kds_attention_background](#drawablekdsattentionbackground)
-    - [@drawable/kds_alert_background](#drawablekdsalertbackground)
+    - [@drawable/kds_section_background](#drawablekds_section_background)
+    - [@drawable/kds_attention_background](#drawablekds_attention_background)
+    - [@drawable/kds_alert_background](#drawablekds_alert_background)
 - [Components](#components)
   - [Buttons](#buttons)
-    - [kds_default_button](#kdsdefaultbutton)
+    - [kds_default_button](#kds_default_button)
   - [Progress Bars](#progress-bars)
+    - [Intermediate Progress Bars](#intermediate-progress-bars)
 - [Activities](#activities)
   - [Important](#important)
   - [KDSSystemActivity](#kdssystemactivity)
@@ -80,6 +81,16 @@ To create a horizontal prograss bar apply the following styles to your ProgressB
         android:progressDrawable="@drawable/kds_progress_bar"
 ```
 
+### Intermediate Progress Bars
+KDS provides an intermediate spinner as well.  The drawable is ```kds_intermediate_spinner```.  For example,
+
+```
+    <ProgressBar
+        android:indeterminateDuration="500"
+        android:indeterminateDrawable="@drawable/kds_intermediate_spinner"
+```
+
+Favour faster progress durations whenever possible.
 
 # Activities
 
